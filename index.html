@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>SMARTSERV LOGIN</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="validation.js"></script>
+</head>
+
+<body>
+  <div class="center">
+    <img src="./imgs/logo.png" class="img_logo">
+    <form method="get" id="form" action="/">
+      <div class="input_field">
+        <input type="text" id="username" placeholder="Username" class="txt_field" required>
+      </div>
+      <div class="input_field">
+        <input type="password" id="password" placeholder="Password" class="txt_field" onclick="ValidateEmail(username)"
+          required>
+      </div>
+      <input type="submit" value="Login" class="submit " onClick="CheckPassword(password)">
+      <div class="forgot_link">
+        <a href="#">Forgot your password?</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
