@@ -1,63 +1,73 @@
-// function myfunction() {
-//     var email = document.getElementById("email").value;
-//     var atpos = email.indexOf("@");
-//     var dotpos = email.lastIndexOf(".");
-
-
-
-//     if (email == "" || atpos < 1 || (dotpos - atpos < 2)) {
-//         alert("Provide Valid Email Address");
-//         return false;
-//     }
-
-//     var pass = document.getElementById("pass").value;
-//     if (pass != "") {
-//         if (pass.search(/[A-Z]/ < 0))
-//         {
-//             alert("Your password needs an uppser case letter");
-//             return false;
-//         }
-//         else if (pass.search(/[0-9]/) < 0) 
-//         {
-//             alert("Your password needs a number");
-//             return false;
-//         }
-//         else if (pass.search([!#$%^&*])) 
-//         {
-//             alert("Only @ is allowed");
-//             return false;
-//         }
-//     }
-// }
-function ValidateEmail(inputText) {
+function Validation(inputText, password) {
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (inputText.value.match(mailformat)) {
-        alert("Valid email address!");
-        document.form1.text1.focus();
-        return true;
-    }
-    else {
-        alert("You have entered an invalid email address!");
-        document.form1.text1.focus();
+    if (!inputText.value.match(mailformat)) {
+        alert("Invalid email address!");
+        document.loginForm.email.focus();
         return false;
     }
+
+    var passformat = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@])/;
+    if (password.value.match(passformat)) {
+        window.location.href = 'dashboard.html';
+            return false;
+    } 
+    else {
+        alert("Password Pattern dosen't match! only @ is allowed and One Upper case one lowercase and numarical values");
+        document.loginForm.password.focus();
+        return false;
+    }
+
 }
 
-function CheckPassword(inputtxt) 
-{
-    var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
-    if (inputtxt.value.match(decimal)) 
-    {
-        window.open('dashboard.html');
-        //location.href = "dashboard.html";
-        return true;
-    }
-    else 
-    {
-        alert('Wrong...!')
-        return false;
-    }
-} 
+// function ValidateEmail(inputText) {
+//     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//     if (inputText.value.match(mailformat)) {
+//         alert("Valid email address!");
+//         document.form1.text1.focus();
+//         return true;
+//     }
+//     else {
+//         alert("You have entered an invalid email address!");
+//         document.form1.text1.focus();
+//         return false;
+//     }
+// }
+
+
+
+
+// function CheckPassword()
+// {
+//     inputtxt = document.getElementById('password').value;
+//     console.log(inputtxt,"Your pass");
+//     // var decimal = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@]).{8,}$/gm;
+//     // if (inputtxt.value.match(decimal))
+//     // {
+//     //     window.open('dashboard.html');
+//     //     return true;
+//     // }
+//     // else
+//     // {
+//     //     document.getElementById(id).innerHTML = "Write Correct password"
+//     //     return false;
+//     // }
+// const regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@]).{8,}$/gm;
+// const str = '';
+// var re = new RegExp(regex);
+// if(re.test(inputtxt))
+// {
+//     console.log("Valid");
+//     alert("Valid email address!");
+//         document.form1.text1.focus();
+//         return true;
+// }
+// else{
+//     console.log("invalid");
+//     alert("Valid email address!");
+//         document.form1.text1.focus();
+//         return true;
+// }
+// }
 
 // function validate()
 // {
